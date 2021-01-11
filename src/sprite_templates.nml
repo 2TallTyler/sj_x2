@@ -1,0 +1,42 @@
+
+/* Begin Sprite Templates */
+
+/* Fix depot view */
+traininfo_y_offset = 2;
+train_width_32_px = 1;
+
+/* Recolour switches for realistic or company colours */
+switch (FEAT_TRAINS, SELF, sw_cc_blue_white, param_company_colours) {
+	0: return palette_2cc(COLOUR_BLUE, COLOUR_WHITE);
+	1: return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
+}
+
+template template_8_standard(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+	//							more negative to shift left
+	//											more negative to shift up
+    [ x,		y,		8,		28,		-3,			-14]
+    [ x+16,		y,		22,		23,		-15,		-13]
+    [ x+46,		y,		32,		14,		-16,		-10]
+    [ x+86,		y,		22,		23,		-5,			-13]
+    [ x+116,	y,		8,		28,		-3,			-14]
+    [ x+132,	y,		22,		23,		-15,		-13]
+    [ x+162,	y,		32,		14,		-16,		-10]
+    [ x+202,	y,		22,		23,		-5,			-13]
+}
+
+template template_8_reversed(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+	//							more negative to shift left
+	//											more negative to shift up
+    [ x+116,	y,		8,		28,		-3,			-14]
+    [ x+132,	y,		22,		23,		-15,		-13]
+    [ x+162,	y,		32,		14,		-16,		-10]
+    [ x+202,	y,		22,		23,		-5,			-13]
+	[ x,		y,		8,		28,		-3,			-14]
+    [ x+16,		y,		22,		23,		-15,		-13]
+    [ x+46,		y,		32,		14,		-16,		-10]
+    [ x+86,		y,		22,		23,		-5,			-13]
+}
+
+/* End Sprite Templates */
